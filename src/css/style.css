@@ -690,3 +690,102 @@ section {
         width: 100%;
     }
 }
+
+/* Approach Section */
+.approach-section {
+    background: var(--white);
+    padding: 5rem 0;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.approach-step {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-light);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.approach-step:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--action);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    font-family: 'Dosis', sans-serif;
+}
+
+.approach-step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--action-ultra-dark);
+}
+
+.approach-step p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Success Section */
+.success-section {
+    background: var(--action);
+    color: var(--white);
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.success-section .section-header h2,
+.success-section .section-subtitle {
+    color: var(--white);
+}
+
+.success-content {
+    max-width: 800px;
+    margin: 2rem auto 0;
+}
+
+.success-content p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.success-section .btn-primary {
+    background: var(--white);
+    color: var(--action);
+}
+
+.success-section .btn-primary:hover {
+    background: var(--shade-ultra-light);
+    transform: translateY(-2px);
+}
+
+/* Responsive Updates */
+@media (max-width: 768px) {
+    .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
