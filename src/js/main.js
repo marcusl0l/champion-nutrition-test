@@ -158,6 +158,32 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCartCount();
 });
 
+// Add event listeners for add to cart buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+    
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productName = this.getAttribute('data-name');
+            const productPrice = this.getAttribute('data-price');
+            
+            addToCart(productName, productPrice);
+            
+            // Visual feedback
+            const originalText = this.textContent;
+            this.textContent = 'Added! ✓';
+            this.style.background = 'var(--success)';
+            
+            setTimeout(() => {
+                this.textContent = originalText;
+                this.style.background = '';
+            }, 2000);
+        });
+    });
+    
+    updateCartBadge();
+});
+
 // Update cart badge
 function updateCartBadge() {
     const cart = JSON.parse(localStorage.getItem('championCart')) || [];
