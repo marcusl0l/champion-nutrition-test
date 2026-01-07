@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Champion Nutrition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Champion Nutrition" class="logo-image">
+                        <span class="logo-text">Champion Nutrition</span>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#about">ABOUT US</a></li>
+                    <li><a href="index.html#products">PRODUCTS</a></li>
+                    <li><a href="cart.html" class="active">CART</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Section -->
+    <section class="cart-section" style="margin-top: 100px;">
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 2rem;">SHOPPING CART</h1>
+            
+            <div class="cart-container">
+                <!-- Cart Items -->
+                <div class="cart-items" id="cartItems">
+                    <!-- Populated by JavaScript -->
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Items:</span>
+                        <span id="itemCount">0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="cartTotal">Contact for Pricing</span>
+                    </div>
+                    <button class="btn btn-primary btn-large" onclick="proceedToCheckout()" id="checkoutBtn">
+                        Proceed to Checkout
+                    </button>
+                    <a href="index.html#products" class="btn btn-secondary" style="margin-top: 1rem; display: block; text-align: center;">
+                        Continue Shopping
+                    </a>
+                </div>
+            </div>
+
+            <!-- Empty Cart Message -->
+            <div class="empty-cart" id="emptyCart" style="display: none;">
+                <h2>Your cart is empty</h2>
+                <p>Add some products to get started!</p>
+                <a href="index.html#products" class="btn btn-primary">Browse Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 3rem;">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 McCall's Champion Nutrition. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>

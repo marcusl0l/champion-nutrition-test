@@ -158,6 +158,20 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCartCount();
 });
 
+// Update cart badge
+function updateCartBadge() {
+    const cart = JSON.parse(localStorage.getItem('championCart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const badge = document.getElementById('cartBadge');
+    if (badge) {
+        badge.textContent = totalItems;
+        badge.style.display = totalItems > 0 ? 'inline-block' : 'none';
+    }
+}
+
+// Call on page load
+document.addEventListener('DOMContentLoaded', updateCartBadge);
+
 // AI Diet Plan form (will be a modal)
 function openAIForm() {
     alert('AI Diet Plan form coming soon! This will open a detailed questionnaire about your health goals, dietary preferences, and lifestyle.');
