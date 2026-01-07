@@ -789,3 +789,30 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
+/* Stage Section */
+.stage-section {
+    background: var(--bg-light);
+}
+
+.stage-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.stage-text h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.stage-text p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.stage-text .btn {
+    margin-top: 1rem;
+}
