@@ -1,0 +1,13 @@
+# Images Directory
+Place product and content images here
+
+## Required Images:
+- placeholder-about.jpg (coach/about photo)
+- placeholder-product.jpg (product photos)
+- Logo files from original site
+
+## Image Optimization:
+- Use WebP format when possible
+- Max width: 1200px for hero images
+- Max width: 800px for product images
+- Compress with tools like ImageOptim or TinyPNG

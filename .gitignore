@@ -1,0 +1,23 @@
+# Development
+.DS_Store
+*.log
+npm-debug.log*
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.directory
+
+# Temp files
+*.tmp
+.cache/
+
+# Environment
+.env
+.env.local
