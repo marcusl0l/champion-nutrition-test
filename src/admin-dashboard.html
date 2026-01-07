@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Champion Nutrition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Champion Nutrition" class="logo-image">
+                    <span class="logo-text">Admin Dashboard</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="admin-dashboard" style="margin-top: 100px; padding: 3rem 0; min-height: 70vh;">
+        <div class="container">
+            <h1>AI MEAL PLAN SUBMISSIONS</h1>
+            
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h3 id="pendingCount">0</h3>
+                    <p>Pending Review</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="approvedCount">0</h3>
+                    <p>Approved</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="totalCount">0</h3>
+                    <p>Total Submissions</p>
+                </div>
+            </div>
+
+            <div class="submissions-list" id="submissionsList">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 McCall's Champion Nutrition</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

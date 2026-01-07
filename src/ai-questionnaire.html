@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Diet Plan Questionnaire - Champion Nutrition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Champion Nutrition" class="logo-image">
+                        <span class="logo-text">Champion Nutrition</span>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html#about">ABOUT US</a></li>
+                    <li><a href="index.html#products">PRODUCTS</a></li>
+                    <li><a href="cart.html">🛒 <span class="cart-badge" id="cartBadge">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Questionnaire Section -->
+    <section class="ai-questionnaire-section" style="margin-top: 100px; padding: 3rem 0;">
+        <div class="container">
+            <div class="questionnaire-header">
+                <h1>AI-POWERED DIET PLAN QUESTIONNAIRE</h1>
+                <p class="subtitle">Answer these questions to help us create your personalized nutrition plan</p>
+                <div class="process-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <span>Personal Info</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <span>Goals & Lifestyle</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <span>Diet Preferences</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <span>Review</span>
+                    </div>
+                </div>
+            </div>
+
+            <form id="aiQuestionnaireForm" class="questionnaire-form">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" data-step="1">
+                    <h2>Personal Information</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="age">Age *</label>
+                            <input type="number" id="age" name="age" min="16" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender *</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select...</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other/Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="height">Height (cm) *</label>
+                            <input type="number" id="height" name="height" min="100" max="250" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentWeight">Current Weight (kg) *</label>
+                            <input type="number" id="currentWeight" name="currentWeight" min="30" max="300" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goalWeight">Goal Weight (kg)</label>
+                        <input type="number" id="goalWeight" name="goalWeight" min="30" max="300" step="0.1">
+                        <small>Optional - leave blank if maintaining current weight</small>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Next Step →</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Goals & Lifestyle -->
+                <div class="form-step" data-step="2">
+                    <h2>Goals & Lifestyle</h2>
+                    
+                    <div class="form-group">
+                        <label for="primaryGoal">Primary Goal *</label>
+                        <select id="primaryGoal" name="primaryGoal" required>
+                            <option value="">Select your main goal...</option>
+                            <option value="lose-weight">Lose Weight</option>
+                            <option value="gain-muscle">Gain Muscle</option>
+                            <option value="improve-performance">Improve Athletic Performance</option>
+                            <option value="competition-prep">Competition Preparation</option>
+                            <option value="maintain-health">Maintain General Health</option>
+                            <option value="body-recomp">Body Recomposition</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeline">Timeline *</label>
+                        <select id="timeline" name="timeline" required>
+                            <option value="">How soon do you want results?</option>
+                            <option value="asap">As soon as possible (1-3 months)</option>
+                            <option value="moderate">Moderate pace (3-6 months)</option>
+                            <option value="gradual">Gradual changes (6-12 months)</option>
+                            <option value="maintenance">Long-term lifestyle change</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activityLevel">Activity Level *</label>
+                        <select id="activityLevel" name="activityLevel" required>
+                            <option value="">Select your activity level...</option>
+                            <option value="sedentary">Sedentary (little or no exercise)</option>
+                            <option value="light">Lightly Active (exercise 1-3 days/week)</option>
+                            <option value="moderate">Moderately Active (exercise 3-5 days/week)</option>
+                            <option value="very">Very Active (exercise 6-7 days/week)</option>
+                            <option value="athlete">Athlete (intense training daily)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trainingType">Type of Training</label>
+                        <select id="trainingType" name="trainingType">
+                            <option value="">Select if applicable...</option>
+                            <option value="none">No structured training</option>
+                            <option value="weights">Weight Training</option>
+                            <option value="cardio">Cardio</option>
+                            <option value="both">Both Weights & Cardio</option>
+                            <option value="sports">Sports-specific</option>
+                            <option value="bodybuilding">Bodybuilding</option>
+                            <option value="crossfit">CrossFit</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="occupation">Occupation Type *</label>
+                        <select id="occupation" name="occupation" required>
+                            <option value="">Select...</option>
+                            <option value="desk">Desk Job (mostly sitting)</option>
+                            <option value="standing">Standing Job</option>
+                            <option value="active">Active Job (lots of movement)</option>
+                            <option value="physical">Physical Labor</option>
+                            <option value="varies">Varies</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="motivation">Why is this important to you? *</label>
+                        <textarea id="motivation" name="motivation" rows="4" required placeholder="Tell us about your motivation and what success looks like to you..."></textarea>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Previous</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Next Step →</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Diet Preferences -->
+                <div class="form-step" data-step="3">
+                    <h2>Dietary Preferences & Restrictions</h2>
+                    
+                    <div class="form-group">
+                        <label for="dietType">Preferred Diet Type *</label>
+                        <select id="dietType" name="dietType" required>
+                            <option value="">Select...</option>
+                            <option value="none">No Specific Preference</option>
+                            <option value="keto">Ketogenic (Keto)</option>
+                            <option value="paleo">Paleo</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="mediterranean">Mediterranean</option>
+                            <option value="low-carb">Low Carb</option>
+                            <option value="high-protein">High Protein</option>
+                            <option value="flexible">Flexible/IIFYM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="allergies">Food Allergies or Intolerances</label>
+                        <input type="text" id="allergies" name="allergies" placeholder="e.g., Gluten, Dairy, Nuts, Shellfish...">
+                        <small>List any foods you cannot eat</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dislikedFoods">Foods You Dislike or Avoid</label>
+                        <textarea id="dislikedFoods" name="dislikedFoods" rows="3" placeholder="List foods you prefer not to eat..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="favoriteFoods">Favorite Foods You'd Like Included</label>
+                        <textarea id="favoriteFoods" name="favoriteFoods" rows="3" placeholder="List foods you enjoy and want in your plan..."></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="mealsPerDay">Meals Per Day *</label>
+                            <select id="mealsPerDay" name="mealsPerDay" required>
+                                <option value="">Select...</option>
+                                <option value="3">3 meals</option>
+                                <option value="4">4 meals</option>
+                                <option value="5">5 meals</option>
+                                <option value="6">6 meals</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="snacks">Include Snacks?</label>
+                            <select id="snacks" name="snacks">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cookingTime">Available Meal Prep Time *</label>
+                            <select id="cookingTime" name="cookingTime" required>
+                                <option value="">Select...</option>
+                                <option value="minimal">Minimal (quick meals)</option>
+                                <option value="moderate">Moderate (30-45 min/day)</option>
+                                <option value="extensive">Extensive (1+ hour/day)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cookingSkill">Cooking Skill Level</label>
+                            <select id="cookingSkill" name="cookingSkill">
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Weekly Food Budget (NZD)</label>
+                        <input type="number" id="budget" name="budget" min="50" max="1000" step="10" placeholder="e.g., 150">
+                        <small>Optional - helps us recommend cost-effective options</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="medicalConditions">Medical Conditions or Medications</label>
+                        <textarea id="medicalConditions" name="medicalConditions" rows="3" placeholder="Any medical conditions, medications, or health considerations we should know about..."></textarea>
+                        <small>This information is confidential and helps us provide safe recommendations</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="previousDiets">Previous Diet Attempts</label>
+                        <textarea id="previousDiets" name="previousDiets" rows="3" placeholder="Tell us about diets you've tried before - what worked and what didn't..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="supplements">Current Supplements</label>
+                        <input type="text" id="supplements" name="supplements" placeholder="e.g., Protein powder, Creatine, Multivitamin...">
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Previous</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Review & Submit →</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Review & Submit -->
+                <div class="form-step" data-step="4">
+                    <h2>Review Your Information</h2>
+                    <p class="review-intro">Please review your information before submitting. You can go back to edit any section.</p>
+                    
+                    <div id="reviewSummary" class="review-summary">
+                        <!-- Populated by JavaScript -->
+                    </div>
+
+                    <div class="form-group consent-box">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <span>I confirm that the information provided is accurate and I understand that this AI-generated meal plan will be reviewed and approved by Tarren McCall before delivery. I also consent to Champion Nutrition storing this information for the purpose of creating my personalized nutrition plan.</span>
+                        </label>
+                    </div>
+
+                    <div class="pricing-note">
+                        <h3>What Happens Next?</h3>
+                        <ol>
+                            <li>Your questionnaire is submitted to our system</li>
+                            <li>Our AI generates a personalized meal plan (usually within 24 hours)</li>
+                            <li>Tarren McCall reviews and approves the plan</li>
+                            <li>You receive your customized meal plan via email (typically 3-4 days)</li>
+                            <li>We'll contact you regarding pricing and any questions</li>
+                        </ol>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Previous</button>
+                        <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                            Submit Questionnaire 🚀
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 McCall's Champion Nutrition. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/ai-questionnaire.js"></script>
+</body>
+</html>
